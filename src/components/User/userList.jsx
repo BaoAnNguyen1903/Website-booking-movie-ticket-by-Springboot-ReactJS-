@@ -15,7 +15,10 @@ const UserList = () => {
             <h1>List of Users</h1>
             <ul>
                 {users.map(user => (
-                    <li key={user.id}>User id :{user.uid} User Name :{user.name}</li>
+                    <li key={user.id}>
+                    User id: {user.id} User Name:{" "}
+                    <Link to={`/viewDetail/${user.id}`}>{user.name}</Link>
+                  </li>
                 ))}
             </ul>
         </div>
