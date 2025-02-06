@@ -3,7 +3,8 @@ import { useState } from "react";
 import { handleUploadFile } from "../../services/api.service";
 
 const ViewUserDetail = (props) => {
-  const { dataDetail, setDataDetail, isDetailOpen, setIsDetailOpen, loadUser} = props;
+  const { dataDetail, setDataDetail, isDetailOpen, setIsDetailOpen, loadUser } =
+    props;
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [preview, setPreview] = useState(null);
@@ -35,7 +36,7 @@ const ViewUserDetail = (props) => {
         setIsDetailOpen(false);
         setSelectedFile(null);
         setPreview(null);
-        await loadUser()
+        await loadUser();
         notification.success({
           message: "Update user avatar",
           description: "Cap nhat avatar thanh cong  "
@@ -43,7 +44,7 @@ const ViewUserDetail = (props) => {
       } else {
         notification.error({
           message: "Error update avatar",
-          description: JSON.stringify(resUpload.message)
+          description: JSON.stringify(resUpdateAvatar.message)
         });
       }
     } else {
