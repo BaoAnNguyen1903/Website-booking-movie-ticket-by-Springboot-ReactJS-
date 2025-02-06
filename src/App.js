@@ -1,21 +1,16 @@
-import './App.css';
-import UserList from './components/User/userList';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from './components/Login/login';
-import ViewDetail from './components/User/viewDetail';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import Header from './components/layout/header';
+import Footer from './components/layout/footer';
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="userList" element={<UserList></UserList>}>
-          <Route path="viewDetail" element={<ViewDetail></ViewDetail>} />
-          
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+    <>
+    <Header />
+    <Outlet />
+    <Footer />
+    </>
+  )
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 export default App;
