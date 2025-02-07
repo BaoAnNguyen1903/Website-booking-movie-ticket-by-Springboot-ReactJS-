@@ -10,9 +10,10 @@ const UserPage = () => {
   const [total, setTotal] = useState(0);
 
   //emty arr sẽ chỉ chạy 1 lần ( arr rỗng )
+  // not emty => next value !== prev value (không truyền vào mảng rỗng thì giá trị nào khác nhau nó sẽ chạy lại)
   useEffect(() => {
     loadUser();
-  }, []);
+  }, [current, pageSize]);
 
   const loadUser = async () => {
     const res = await fetchAllUserAPI(current, pageSize);

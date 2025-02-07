@@ -46,7 +46,7 @@ const UserTable = (props) => {
     {
       title: "STT",
       render: (_, record, index) => {
-        return <>{index + 1}</>;
+        return <>{(index + 1) + (current -1) *pageSize }</>;
       }
     },
     {
@@ -103,7 +103,21 @@ const UserTable = (props) => {
     }
   ];
 
-  const onChange = (pagination, filters, sorter, extra) => {};
+  const onChange = (pagination, filters, sorter, extra) => {
+    // nếu thay đổi trang : current
+    if (pagination && pagination.current) {
+      if (+pagination.current !== +current) {
+        setCurrent(+pagination.current); // dấu + giúp convert từ string qua số nguyên "5" => 5
+      }
+    }
+
+    // nếu thay đổi tổng số phần tử : pageSize
+    if (pagination && pagination.pageSize) {
+      if (+pagination.current !== +pageSize) {
+        setPageSize(+pagination.pageSize);
+      }
+    }
+  };
 
   return (
     <>
