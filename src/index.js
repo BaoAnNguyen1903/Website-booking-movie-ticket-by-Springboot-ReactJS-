@@ -11,6 +11,7 @@ import App from './App';
 import ErrorPage from './pages/error';
 import UserPage from './pages/user';
 import BookPage from './pages/book';
+import { AuthWrapper } from './components/context/auth.context';
 
 const router = createBrowserRouter([
   {
@@ -64,10 +65,9 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/* <App /> */}
+  <AuthWrapper>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </AuthWrapper>
 );
 
 // If you want to start measuring performance in your app, pass a function

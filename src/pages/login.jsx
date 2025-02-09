@@ -11,17 +11,23 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { loginAPI } from "../services/api.service";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../components/context/auth.context";
 
 const LoginPage = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+  const { setUser } = useContext(AuthContext);
   const [loading, setLoading] = useState(false); //setLoading = false để cho nó không xoayxoay
+
   const onFinish = async (values) => {
     setLoading(true); // để cho nó xoayxoay
     const res = await loginAPI(values.email, values.password);
     if (res.data) {
       message.success("login success");
+      localStorage.setItem("access_token", res.data.access_token);
+      setUser(res.data.user);
       navigate("/");
     } else {
       notification.error({
@@ -31,6 +37,7 @@ const LoginPage = () => {
     }
     setLoading(false); // tắt xoay
   };
+
   return (
     <Row justify={"center"} style={{ marginTop: "30px" }}>
       <Col xs={24} md={16} lg={8}>
