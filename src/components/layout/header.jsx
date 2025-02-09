@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { Menu } from "antd";
 import {
-  UserOutlined,
+  UsergroupAddOutlined,
+  LoginOutlined,
   HomeOutlined,
-  BookOutlined,
-  SettingOutlined
+  AuditOutlined,
+  AliwangwangOutlined
 } from "@ant-design/icons";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/auth.context";
@@ -35,7 +36,7 @@ const Header = () => {
         </Link>
       ),
       key: "users",
-      icon: <UserOutlined />
+      icon: <UsergroupAddOutlined />
     },
     {
       label: (
@@ -44,23 +45,38 @@ const Header = () => {
         </Link>
       ),
       key: "books",
-      icon: <BookOutlined />
+      icon: <AuditOutlined />
     },
-    {
-      label: "cai dat",
-      key: `setting`,
-      icon: <SettingOutlined />,
-      children: [
-        {
-          label: <Link to={"/login"}>Dang nhap</Link>,
-          key: "login"
-        },
-        {
-          label: "dang xuat",
-          key: "logout"
-        }
-      ]
-    }
+
+    ...(!user.id // nếu không cs user.id thì in ra nút login
+      ? [
+          {
+            label: (
+              <Link style={{ textDecoration: "none" }} to={"/login"}>
+                Dang nhap
+              </Link>
+            ),
+            key: "login",
+            icon: <LoginOutlined />
+          }
+        ]
+      : []),
+
+    ...(user.id // nếu có user.id thì in ra tên người dùngdùng
+      ? [
+          {
+            label: `${user.fullName}`,
+            key: `setting`,
+            icon: <AliwangwangOutlined />,
+            children: [
+              {
+                label: "dang xuat",
+                key: "logout"
+              }
+            ]
+          }
+        ]
+      : [])
   ];
   return (
     // <ul>
