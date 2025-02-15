@@ -1,4 +1,3 @@
-// import axios from "axios";
 import axios from "./aoxios.customize";
 
 const createUserAPI = (fullName, email, password, phone) => {
