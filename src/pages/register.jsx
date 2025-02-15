@@ -116,7 +116,6 @@ const RegisterPage = () => {
                   email: "anndbdeptrai@gmail.com",
                   fullName: "an dep trai"
                 });
-                console.log(">>> check form: ");
               }}
             >
               Test

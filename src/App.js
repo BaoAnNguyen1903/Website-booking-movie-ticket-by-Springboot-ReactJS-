@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Header from './components/layout/header';
 import Footer from './components/layout/footer';
 import { getAccountAPI } from './services/api.service';
-import { AuthContext } from "../context/auth.context";
 import { Spin } from 'antd';
+import { AuthContext } from './components/context/auth.context';
 
 const App = () => {
   const { setUser, isAppLoading, setIsAppLoading } = useContext(AuthContext);
