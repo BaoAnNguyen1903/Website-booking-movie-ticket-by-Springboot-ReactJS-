@@ -72,17 +72,22 @@ const Footer = () => {
         </div>
 
         <div className="footer-info">
-          <p>Tên Doanh Nghiệp: Công Ty TNHH ÂN NGUYỄN.</p>
-          <p>
-            Giấy CNĐKKD: 0400668112 - Ngày cấp: 05/11/2008. Đăng ký thay đổi lần
-            thứ 11 ngày 21/12/2016
-          </p>
-          <p>Cơ quan cấp: Đặng Thành Vinh</p>
-          <p>
-            Địa chỉ đăng ký kinh doanh: 22 đường 2/9, Phường Bình Hiên, Q.Hải
-            Châu, Tp.Đà Nẵng, Việt Nam.
-          </p>
-          <p>Điện thoại: 0236 xxx xx</p>
+          <div>
+            <p>Tên Doanh Nghiệp: Công Ty TNHH ÂN NGUYỄN.</p>
+            <p>
+              Giấy CNĐKKD: 0400668112 - Ngày cấp: 05/11/2008. Đăng ký thay đổi
+              lần thứ 11 ngày 21/12/2016
+            </p>
+            <p>Cơ quan cấp: Đặng Thành Vinh</p>
+            <p>
+              Địa chỉ đăng ký kinh doanh: 22 đường 2/9, Phường Bình Hiên, Q.Hải
+              Châu, Tp.Đà Nẵng, Việt Nam.
+            </p>
+            <p>Điện thoại: 0236 xxx xx</p>
+          </div>
+          <div>
+            <img src="" alt="" />
+          </div>
         </div>
 
         <Divider style={{ width: "100%" }} />
