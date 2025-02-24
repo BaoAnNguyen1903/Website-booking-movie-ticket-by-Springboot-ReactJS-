@@ -66,7 +66,7 @@ const Header = () => {
       icon: <AuditOutlined />
     },
 
-    ...(!user.id // nếu không cs user.id thì in ra nút login
+    ...(!user.id // nếu không co user.id thì in ra nút login
       ? [
           {
             label: (
