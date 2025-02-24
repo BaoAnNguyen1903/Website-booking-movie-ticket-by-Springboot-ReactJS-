@@ -4,19 +4,34 @@ import {
   YoutubeOutlined
 } from "@ant-design/icons";
 import "./footer.css";
+import { Divider } from "antd";
 
 const Footer = () => {
   return (
     <footer>
       <div className="footer-container">
-        {/* Mạng xã hội */}
         <div className="footer-social">
-          <FacebookOutlined />
-          <InstagramOutlined />
-          <YoutubeOutlined />
+          <ul>
+            <li>
+              <a href="">
+                <FacebookOutlined />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <InstagramOutlined />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <YoutubeOutlined />
+              </a>
+            </li>
+          </ul>
         </div>
 
-        {/* Nội dung chính */}
+        <Divider style={{ width: "100%" }} />
+
         <div className="footer-columns">
           <div className="footer-column">
             <img src="" alt="" className="footer-logo" />
@@ -25,22 +40,39 @@ const Footer = () => {
 
           <div className="footer-column">
             <h2>AN NGUYEN CINEMA</h2>
-            <a href="">GIỚI THIỆU</a>
-            <a href="">TUYỂN DỤNG</a>
-            <a href="">LIÊN HỆ</a>
+            <ul>
+              <li>
+                <a href="">GIỚI THIỆU</a>
+              </li>
+              <li>
+                <a href="">TUYỂN DỤNG</a>
+              </li>
+              <li>
+                <a href="">LIÊN HỆ</a>
+              </li>
+            </ul>
           </div>
 
           <div className="footer-column">
             <h2>THÔNG TIN CHUNG</h2>
-            <a href="">ĐIỀU KHOẢN CHUNG</a>
-            <a href="">CÂU HỎI THƯỜNG GẶP</a>
-            <a href="">ĐIỀU KHOẢN GIAO DỊCH</a>
+            <ul>
+              <li>
+                <a href="">ĐIỀU KHOẢN CHUNG</a>
+              </li>
+              <li>
+                <a href="">CÂU HỎI THƯỜNG GẶP</a>
+              </li>
+              <li>
+                <a href="">ĐIỀU KHOẢN GIAO DỊCH</a>
+              </li>
+            </ul>
           </div>
+
+          <div>story facebook</div>
         </div>
 
-        {/* Thông tin công ty */}
         <div className="footer-info">
-          <p>Tên Doanh Nghiệp: Công Ty TNHH Ân Nguyễn.</p>
+          <p>Tên Doanh Nghiệp: Công Ty TNHH ÂN NGUYỄN.</p>
           <p>
             Giấy CNĐKKD: 0400668112 - Ngày cấp: 05/11/2008. Đăng ký thay đổi lần
             thứ 11 ngày 21/12/2016
@@ -53,7 +85,8 @@ const Footer = () => {
           <p>Điện thoại: 0236 xxx xx</p>
         </div>
 
-        {/* Footer Bottom */}
+        <Divider style={{ width: "100%" }} />
+
         <div className="footer-bottom">
           <p>MỘT SẢN PHẨM ĐẾN TỪ ÂN NGUYỄN, ANNDB2.</p>
           <img src="" alt="" className="footer-logo" />
