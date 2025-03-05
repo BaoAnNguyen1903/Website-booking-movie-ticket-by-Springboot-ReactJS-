@@ -13,6 +13,7 @@ import UserPage from './pages/user';
 import BookPage from './pages/book';
 import { AuthWrapper } from './components/context/auth.context';
 import PrivateRoute from './pages/private.route';
+import 'nprogress/nprogress.css'
 
 const router = createBrowserRouter([
   {
